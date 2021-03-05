@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"/>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Maze_Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link ref = "stylesheet" type ="css/text" href ="/Maze_generator/stylesheetMaze.css" /> 
+    <style>
+html{
+  background-image: linear-gradient(to right top, #051937, #004973, #0080a3, #00babd, #00f4bf);
+
+}
+#maze{
+    background-color: #263328;
+    width:vw;
+    height: 70vh;
+    max-height:650px;
+    display:grid;
+    border: solid #00F4BF 0.5vmax;
+    grid-template-rows: repeat(0,1fr);
+    grid-template-columns: repeat(0,1fr);
+}
+.leftWall{
+      background-color: #263328;
+      border-left: 1px solid #506DE6;
+  }
+  .rightWall{
+      background-color: #263328;
+      border-right: 1px solid #506DE6;
+  }
+  .topWall{
+      background-color: #263328;
+      border-top: 1px solid #506DE6;
+  }
+  .bottomWall{
+      background-color: #263328;
+      border-bottom: 1px solid #506DE6;
+  }
+  .start{
+    background-color: #00F4BF;
+  }
+
+  .stack{
+    background-color: #608992;
+
+  }
+  .currentCell{
+    background-color: #FF8A49;  
+  }
+  input[type=number]{
+    width:30vw;
+    max-width: 300px;
+    height:5px;
+    padding:10px;
+    border-radius: 10px;
+    
+    resize: vertical;
+  }
+  .button{
+    height:2.3vh;
+    width:4.3vw;
+    min-width: 40px;
+    align-items:center;
+    border-radius: 5px;
+    
+  }
+  label{
+    
+    font-size: 3vh;
+
+  }
+  h1{
+    font-size: 5vmin;
+  }
+    </style>
+  </head>
+  <body>
+    <form id = "mazeForm" target ="_self" onsubmit="callStoreData()">
+      <label style = "color: #E3E3E3"for ="number">Time between searches</label><br>
+      <input type= "number" id="Time" value="35" /><br>
+      <label for="number" style = "color: #E3E3E3">Pixels per cell</label><br>
+      <input type="number" id="pixelsPerCell" value = "100" /><br>
+      <label for ="showSteps" style = "color: #E3E3E3">show steps</label>
+      <select id="showSteps" name ="showSteps"> 
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br>
+      <label style = "color: #E3E3E3" for="button">generate</label>
+      <input type="button" class ="button" id="send_button">
+
+    </form>
+    <br>
+    <div id="maze"></div>
+    </a>
+    <script src="mainHandler.js" type="module"></script>
+    <script src="FormHandler.js" type="module"></script>
+  </body>
+</html>
